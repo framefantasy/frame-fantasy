@@ -2,9 +2,15 @@ module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
+    "./utils/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#E9BC73",
+        secondary: "#1F1F1F",
+      },
+    },
   },
   plugins: [],
 };
