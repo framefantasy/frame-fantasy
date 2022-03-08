@@ -1,7 +1,37 @@
-import { Hero } from "./";
+import { ROUTES } from "../../utils/constants/shared";
+import { CategoryProps } from "../shared/home";
+import { Hero, Category } from "./";
 
 export const Home = () => {
-  return <Hero />;
+  const categories: CategoryProps[] = [
+    {
+      href: ROUTES.INDEX,
+      images: [""],
+      name: "Weddings",
+      tagline: "Framing your day in a memorable way!",
+    },
+    {
+      href: ROUTES.INDEX,
+      images: [""],
+      name: "Maternity",
+      tagline: "Framing your day in a memorable way!",
+    },
+    {
+      href: ROUTES.INDEX,
+      images: [""],
+      name: "Baby",
+      tagline: "Framing your day in a memorable way!",
+    },
+  ];
+
+  return (
+    <>
+      <Hero />
+      {categories.map((cat) => (
+        <Category key={cat.name} {...cat} />
+      ))}
+    </>
+  );
 };
 
 export default Home;
