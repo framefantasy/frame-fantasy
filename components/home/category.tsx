@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "../shared";
-import { CategoryProps } from "../shared/home";
+import { CategoryProps } from "../../utils/interfaces/home";
 
 const Category = ({ href, images, name, tagline }: CategoryProps) => {
   return (

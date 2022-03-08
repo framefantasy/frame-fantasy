@@ -1,4 +1,4 @@
-import { ROUTES } from "../../utils/constants/shared";
+import { ROUTES } from "../constants/shared";
 
 export interface CategoryProps {
   name: string;
