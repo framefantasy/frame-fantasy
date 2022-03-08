@@ -6,37 +6,32 @@ export enum ROUTES {
 
 export const NAV_ITEMS: NavItem[] = [
   {
-    content: "Category 1",
+    content: "Wedding",
     external: false,
     href: ROUTES.INDEX,
   },
   {
-    content: "Category 1",
+    content: "Fashion Portfolio",
     external: false,
     href: ROUTES.INDEX,
   },
   {
-    content: "Category 1",
+    content: "Commercial Fashion",
     external: false,
     href: ROUTES.INDEX,
   },
   {
-    content: "Category 1",
+    content: "Concept Shoot",
     external: false,
     href: ROUTES.INDEX,
   },
   {
-    content: "Category 1",
+    content: "Baby Photoshoot",
     external: false,
     href: ROUTES.INDEX,
   },
   {
-    content: "Category 1",
-    external: false,
-    href: ROUTES.INDEX,
-  },
-  {
-    content: "Category 1",
+    content: "Events",
     external: false,
     href: ROUTES.INDEX,
   },
