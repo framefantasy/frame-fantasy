@@ -1,5 +1,5 @@
 import { ROUTES } from "../../utils/constants/shared";
-import { CategoryProps } from "../shared/home";
+import { CategoryProps } from "../../utils/interfaces/home";
 import { Hero, Category } from "./";
 
 export const Home = () => {
