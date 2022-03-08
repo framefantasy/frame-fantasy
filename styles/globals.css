@@ -11,3 +11,10 @@ __#next {
 * {
   box-sizing: border-box;
 }
+
+h1 {
+  @apply text-7xl;
+}
+h2 {
+  @apply text-6xl;
+}
