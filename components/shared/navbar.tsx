@@ -4,7 +4,7 @@ import { NAV_ITEMS, ROUTES } from "../../utils/constants/shared";
 
 const Navbar = () => {
   return (
-    <nav className="sticky top-0 left-0 w-full bg-secondary">
+    <nav className="sticky top-0 left-0 w-full bg-secondary z-50">
       <div className="w-10/12 mx-auto flex items-center justify-between py-4">
         <Link href={ROUTES.INDEX}>
           <a>
