@@ -10,3 +10,8 @@ export interface ButtonProps {
   children: React.ReactNode;
   onClick?: (e: React.MouseEvent) => void;
 }
+
+export interface GalleryProps {
+  alt: string;
+  images: string[];
+}
