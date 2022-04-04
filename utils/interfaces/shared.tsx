@@ -1,7 +1,7 @@
-import { ROUTES } from "../constants/shared";
+import { ROUTES, SLUGS } from "../constants/shared";
 
 export interface NavItem {
-  content: string;
+  slug: SLUGS;
   href: ROUTES;
   external: boolean;
 }

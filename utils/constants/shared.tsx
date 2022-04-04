@@ -1,5 +1,14 @@
 import { NavItem } from "../interfaces/shared";
 
+export enum SLUGS {
+  WEDDINGS = "weddings",
+  FASHION_PORTFOLIO = "fashion-portfolio",
+  COMMERCIAL_FASHION = "commercial-fashion",
+  CONCEPT_SHOOT = "concept-shoot",
+  BABY_PHOTOSHOOT = "baby-photoshoot",
+  EVENTS = "events",
+}
+
 export enum ROUTES {
   INDEX = "/",
   WEDDINGS = "/weddings",
@@ -12,32 +21,32 @@ export enum ROUTES {
 
 export const NAV_ITEMS: NavItem[] = [
   {
-    content: "Wedding",
+    slug: SLUGS.WEDDINGS,
     external: false,
     href: ROUTES.WEDDINGS,
   },
   {
-    content: "Fashion Portfolio",
+    slug: SLUGS.FASHION_PORTFOLIO,
     external: false,
     href: ROUTES.FASHION_PORTFOLIO,
   },
   {
-    content: "Commercial Fashion",
+    slug: SLUGS.COMMERCIAL_FASHION,
     external: false,
     href: ROUTES.COMMERCIAL_FASHION,
   },
   {
-    content: "Concept Shoot",
+    slug: SLUGS.CONCEPT_SHOOT,
     external: false,
     href: ROUTES.CONCEPT_SHOOT,
   },
   {
-    content: "Baby Photoshoot",
+    slug: SLUGS.BABY_PHOTOSHOOT,
     external: false,
     href: ROUTES.BABY_PHOTOSHOOT,
   },
   {
-    content: "Events",
+    slug: SLUGS.EVENTS,
     external: false,
     href: ROUTES.EVENTS,
   },

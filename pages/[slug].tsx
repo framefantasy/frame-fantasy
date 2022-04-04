@@ -1,5 +1,11 @@
-import type { GetServerSidePropsResult, NextPage } from "next";
+import type {
+  GetServerSidePropsContext,
+  GetServerSidePropsResult,
+  NextPage,
+} from "next";
+
 import { Gallery } from "../components/gallery";
+import { deslugify } from "../utils/functions";
 import { GalleryProps } from "../utils/interfaces/gallery";
 
 const WeddingsPage: NextPage<GalleryProps> = (props: GalleryProps) => {
@@ -12,9 +18,15 @@ const WeddingsPage: NextPage<GalleryProps> = (props: GalleryProps) => {
 
 export default WeddingsPage;
 
-export async function getServerSideProps(): Promise<
-  GetServerSidePropsResult<GalleryProps>
-> {
+export async function getServerSideProps(
+  ctx: GetServerSidePropsContext
+): Promise<GetServerSidePropsResult<GalleryProps>> {
+  const {
+    query: { slug },
+  } = ctx;
+
+  console.log(slug);
+
   try {
     return {
       props: {
@@ -212,7 +224,7 @@ export async function getServerSideProps(): Promise<
             Math.random() * 10
           )}00/${Math.floor(Math.random() * 10)}00`,
         ],
-        name: "Weddings",
+        name: deslugify(slug as string),
         tagline: "Anim dolor cupidatat sit quis.",
       },
     };
