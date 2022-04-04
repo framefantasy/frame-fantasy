@@ -17,12 +17,15 @@ const Images = ({ images, alt }: ImagesProps) => {
           onClick={() => setOpenImage(null)}
           className="bg-secondary fixed z-50 top-0 left-0 w-full h-screen"
         >
-          <span className="absolute right-0 top-0 text-6xl p-12 cursor-pointer">
+          <span className="fixed right-0 top-0 text-6xl p-12 cursor-pointer">
             X
           </span>
-          <figure className="flex justify-center items-center h-full p-16">
-            <img src={openImage} alt={alt} />
-          </figure>
+
+          <img
+            src={openImage}
+            alt={alt}
+            className="object-contain h-full w-full p-16"
+          />
         </div>
       )}
 
