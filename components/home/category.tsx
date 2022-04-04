@@ -6,7 +6,7 @@ const Category = ({ href, images, name, tagline }: CategoryProps) => {
   return (
     <section className="mt-20">
       <div className="w-10/12 mx-auto">
-        <div className="w-7/12 sticky top-40 z-0 border-b-4 border-primary flex items-end text-white pb-4">
+        <div className="w-7/12 border-b-4 border-primary flex items-end text-white pb-4 ml-2">
           <h2>{name}</h2>
           <span className="text-sm ml-8 font-medium">{tagline}</span>
         </div>

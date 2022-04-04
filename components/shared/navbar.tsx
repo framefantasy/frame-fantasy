@@ -10,7 +10,7 @@ const Navbar = () => {
   } = useRouter();
 
   return (
-    <nav className="sticky top-0 left-0 w-full bg-secondary z-40">
+    <nav className="fixed top-0 left-0 w-full bg-secondary z-40">
       <div className="w-10/12 mx-auto flex items-center justify-between py-4">
         <Link href={ROUTES.INDEX}>
           <a>

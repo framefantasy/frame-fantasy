@@ -18,3 +18,9 @@ h1 {
 h2 {
   @apply text-6xl;
 }
+h3 {
+  @apply text-5xl;
+}
+h4 {
+  @apply text-4xl;
+}
