@@ -1,15 +1,12 @@
 import { GalleryProps } from "../../utils/interfaces/gallery";
-import { Gallery as GallerySection } from "../shared";
+import { Images } from "./";
 
 const Gallery = ({ name, tagline, images }: GalleryProps) => {
   return (
     <section>
       <h1>{name}</h1>
 
-      <GallerySection
-        images={images}
-        alt={`Frame Fantasy | ${name} - ${tagline}`}
-      />
+      <Images images={images} alt={`Frame Fantasy | ${name} - ${tagline}`} />
     </section>
   );
 };

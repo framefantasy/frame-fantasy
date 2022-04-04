@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
-import { GalleryProps } from "../../utils/interfaces/shared";
+import { ImagesProps } from "../../utils/interfaces/gallery";
 import Masonry from "react-masonry-css";
 
-const Gallery = ({ images, alt }: GalleryProps) => {
+const Images = ({ images, alt }: ImagesProps) => {
   const [openImage, setOpenImage] = useState<string | null>(null);
 
   useEffect(() => {
@@ -45,4 +45,4 @@ const Gallery = ({ images, alt }: GalleryProps) => {
   );
 };
 
-export default Gallery;
+export default Images;
