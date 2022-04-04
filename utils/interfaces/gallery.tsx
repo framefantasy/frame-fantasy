@@ -3,3 +3,8 @@ export interface GalleryProps {
   tagline: string;
   images: string[];
 }
+
+export interface ImagesProps {
+  alt: string;
+  images: string[];
+}
