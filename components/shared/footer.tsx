@@ -2,7 +2,7 @@ import { Instagram, Facebook } from "../../utils/logos";
 
 const Footer = () => {
   return (
-    <footer className="w-full flex items-center flex-col bg-white mt-12 text-secondary p-10">
+    <footer className="w-full flex items-center flex-col bg-accent mt-12 text-white p-10">
       <div className="flex items-center gap-x-4 mb-4">
         <Facebook className="w-6" />
         <Facebook className="w-6" />
