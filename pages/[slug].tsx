@@ -5,6 +5,7 @@ import type {
 } from "next";
 
 import { Gallery } from "../components/gallery";
+import { SLUGS } from "../utils/constants/shared";
 import { deslugify } from "../utils/functions";
 import { GalleryProps } from "../utils/interfaces/gallery";
 
@@ -25,209 +26,214 @@ export async function getServerSideProps(
     query: { slug },
   } = ctx;
 
-  console.log(slug);
+  const categoryExists: boolean = Object.values(SLUGS).includes(slug as SLUGS);
 
   try {
-    return {
-      props: {
-        images: [
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-          `https://picsum.photos/${Math.floor(
-            Math.random() * 10
-          )}00/${Math.floor(Math.random() * 10)}00`,
-        ],
-        name: deslugify(slug as string),
-        tagline: "Anim dolor cupidatat sit quis.",
-      },
-    };
+    if (categoryExists)
+      return {
+        props: {
+          images: [
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+            `https://picsum.photos/${Math.floor(
+              Math.random() * 10
+            )}00/${Math.floor(Math.random() * 10)}00`,
+          ],
+          name: deslugify(slug as string),
+          tagline: "Anim dolor cupidatat sit quis.",
+        },
+      };
+    else
+      return {
+        notFound: true,
+      };
   } catch (err) {
     return {
       notFound: true,
