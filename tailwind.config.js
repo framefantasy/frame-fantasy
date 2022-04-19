@@ -10,6 +10,9 @@ module.exports = {
         primary: "#E9BC73",
         secondary: "#1F1F1F",
       },
+      boxShadow: {
+        topbar: "inset 5px 5px 36px #0c0c0c, inset -5px -5px 36px #323232",
+      },
     },
   },
   plugins: [],
