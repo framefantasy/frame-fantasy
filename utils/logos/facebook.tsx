@@ -4,7 +4,7 @@ const Facebook = ({ className }: IconProps) => (
   <svg
     stroke="currentColor"
     fill="currentColor"
-    stroke-width="0"
+    strokeWidth="0"
     viewBox="0 0 320 512"
     className={`w-full h-full ${className}`}
     xmlns="http://www.w3.org/2000/svg"
