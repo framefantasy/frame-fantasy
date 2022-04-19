@@ -4,7 +4,7 @@ import { Images } from "./";
 const Gallery = ({ name, tagline, images }: GalleryProps) => {
   return (
     <section>
-      <h1 className="text-center mt-12 mb-8 capitalize">{name}</h1>
+      <h1 className="text-center mt-12 lg:mt-40 mb-8 capitalize">{name}</h1>
 
       <Images images={images} alt={`Frame Fantasy | ${name} - ${tagline}`} />
     </section>

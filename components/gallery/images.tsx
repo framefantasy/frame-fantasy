@@ -8,6 +8,7 @@ const Images = ({ images, alt }: ImagesProps) => {
 
   useEffect(() => {
     window.addEventListener("scroll", () => setOpenImage(null));
+    return () => window.removeEventListener("scroll", () => {});
   }, []);
 
   return (
@@ -17,7 +18,7 @@ const Images = ({ images, alt }: ImagesProps) => {
           onClick={() => setOpenImage(null)}
           className="bg-secondary fixed z-50 top-0 left-0 w-full h-screen"
         >
-          <span className="fixed right-0 top-0 text-6xl p-12 cursor-pointer">
+          <span className="fixed right-0 top-0 text-6xl md p-12 cursor-pointer">
             X
           </span>
 
@@ -30,8 +31,12 @@ const Images = ({ images, alt }: ImagesProps) => {
       )}
 
       <Masonry
-        breakpointCols={3}
-        className={`flex w-auto${openImage ? " over flow-hidden h -0" : ""}`}
+        breakpointCols={{
+          default: 3,
+          1024: 2,
+          768: 1,
+        }}
+        className="flex w-auto"
         columnClassName="bg-clip-padding"
       >
         {images.map((img) => (

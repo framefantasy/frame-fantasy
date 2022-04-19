@@ -47,6 +47,7 @@ const Navbar = () => {
                   target={nav.external ? "_blank" : ""}
                   rel="noopener noreferrer"
                   className="text-lg font-medium capitalize mb-2"
+                  onClick={() => setTopbarOpen(false)}
                 >
                   {deslugify(nav.slug)}
                 </a>
