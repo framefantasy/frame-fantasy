@@ -14,6 +14,11 @@ module.exports = {
       boxShadow: {
         topbar: "inset 5px 5px 36px #0c0c0c, inset -5px -5px 36px #323232",
       },
+      maxWidth: {
+        "8xl": "88rem",
+        "9xl": "96rem",
+        "10xl": "104rem",
+      },
     },
   },
   plugins: [],

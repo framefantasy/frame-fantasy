@@ -7,7 +7,7 @@ const Category = ({ href, images, name, tagline }: CategoryProps) => {
     <section className="mt-20">
       <div className="w-full px-10 lg:px-0 lg:w-10/12 mx-auto">
         <div className="w-10/12 lg:w-7/12 border-b-4 border-primary flex flex-col lg:flex-row lg:items-end text-white pb-4 ml-2">
-          <h2>{name}</h2>
+          <h2 className="capitalize">{name}</h2>
           <span className="text-sm lg:ml-8 mt-4 lg:mt-0 font-medium">
             {tagline}
           </span>

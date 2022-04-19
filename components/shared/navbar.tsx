@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-secondary z-40">
-      <div className="w-full max-w-7xl px-10 mx-auto hidden lg:flex items-center justify-between py-4">
+      <div className="w-full max-w-10xl px-10 mx-auto hidden lg:flex items-center justify-between py-4">
         <Link href={ROUTES.INDEX}>
           <a>
             <img src="/brand/RTwT.png" alt="Frame Fantasy" />
@@ -59,7 +59,7 @@ const Navbar = () => {
         <div className="relative top-0 left-0 text-right mt-2 mr-4 rounded-full">
           <button
             onClick={() => setTopbarOpen(!topbarOpen)}
-            className={`${topbarOpen ? "open " : ""}hamburger`}
+            className={`hamburger${topbarOpen ? " open" : ""}`}
           >
             <span className="bg-primary" />
             <span className="bg-primary" />

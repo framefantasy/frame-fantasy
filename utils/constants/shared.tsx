@@ -1,34 +1,31 @@
 import { NavItem } from "../interfaces/shared";
 
 export enum SLUGS {
-  WEDDINGS = "weddings",
-  FASHION_PORTFOLIO = "fashion-portfolio",
+  PORTRAITS = "portraits",
   COMMERCIAL_FASHION = "commercial-fashion",
-  CONCEPT_SHOOT = "concept-shoot",
-  BABY_PHOTOSHOOT = "baby-photoshoot",
-  EVENTS = "events",
+  PRE_WEDDING = "pre-wedding",
+  WEDDINGS = "weddings",
+  CONCEPTUAL = "conceptual",
+  MATERNITY = "maternity",
+  OTHERS = "others",
 }
 
 export enum ROUTES {
   INDEX = "/",
-  WEDDINGS = "/weddings",
-  FASHION_PORTFOLIO = "/fashion-portfolio",
+  PORTRAITS = "/portraits",
   COMMERCIAL_FASHION = "/commercial-fashion",
-  CONCEPT_SHOOT = "/concept-shoot",
-  BABY_PHOTOSHOOT = "/baby-photoshoot",
-  EVENTS = "/events",
+  PRE_WEDDING = "/pre-wedding",
+  WEDDINGS = "/weddings",
+  CONCEPTUAL = "/conceptual",
+  MATERNITY = "/maternity",
+  OTHERS = "/others",
 }
 
 export const NAV_ITEMS: NavItem[] = [
   {
-    slug: SLUGS.WEDDINGS,
+    slug: SLUGS.PORTRAITS,
     external: false,
-    href: ROUTES.WEDDINGS,
-  },
-  {
-    slug: SLUGS.FASHION_PORTFOLIO,
-    external: false,
-    href: ROUTES.FASHION_PORTFOLIO,
+    href: ROUTES.PORTRAITS,
   },
   {
     slug: SLUGS.COMMERCIAL_FASHION,
@@ -36,18 +33,28 @@ export const NAV_ITEMS: NavItem[] = [
     href: ROUTES.COMMERCIAL_FASHION,
   },
   {
-    slug: SLUGS.CONCEPT_SHOOT,
+    slug: SLUGS.PRE_WEDDING,
     external: false,
-    href: ROUTES.CONCEPT_SHOOT,
+    href: ROUTES.PRE_WEDDING,
   },
   {
-    slug: SLUGS.BABY_PHOTOSHOOT,
+    slug: SLUGS.WEDDINGS,
     external: false,
-    href: ROUTES.BABY_PHOTOSHOOT,
+    href: ROUTES.WEDDINGS,
   },
   {
-    slug: SLUGS.EVENTS,
+    slug: SLUGS.CONCEPTUAL,
     external: false,
-    href: ROUTES.EVENTS,
+    href: ROUTES.CONCEPTUAL,
+  },
+  {
+    slug: SLUGS.MATERNITY,
+    external: false,
+    href: ROUTES.MATERNITY,
+  },
+  {
+    slug: SLUGS.OTHERS,
+    external: false,
+    href: ROUTES.OTHERS,
   },
 ];
