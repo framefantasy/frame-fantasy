@@ -66,6 +66,8 @@ export async function getStaticProps(
           name: deslugify(slug as string),
           tagline: "Anim dolor cupidatat sit quis.",
         },
+        // ? INFO: 1 week
+        revalidate: 1 * 60 * 60 * 24 * 7,
       };
     else
       return {
