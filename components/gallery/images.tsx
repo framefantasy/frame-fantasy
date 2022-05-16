@@ -30,25 +30,32 @@ const Images = ({ images, alt }: ImagesProps) => {
         </div>
       )}
 
-      <Masonry
-        breakpointCols={{
-          default: 3,
-          1024: 2,
-          768: 1,
-        }}
-        className="flex w-auto"
-        columnClassName="bg-clip-padding"
-      >
-        {images.map((img) => (
-          <img
-            key={img}
-            src={img}
-            alt={alt}
-            onClick={() => setOpenImage(img)}
-            className="w-full p-2 cursor-pointer"
-          />
-        ))}
-      </Masonry>
+      {images.length ? (
+        <>
+          <Masonry
+            breakpointCols={{
+              default: 3,
+              1024: 2,
+              768: 1,
+            }}
+            className="flex w-auto"
+            columnClassName="bg-clip-padding"
+          >
+            {images.map((img) => (
+              <img
+                key={img}
+                src={img}
+                alt={alt}
+                onClick={() => setOpenImage(img)}
+                className="w-full p-2 cursor-pointer"
+              />
+            ))}
+          </Masonry>
+          <h5 className="text-center py-8">More images will be added soon!</h5>
+        </>
+      ) : (
+        <h4 className="text-center py-8">Images will be added soon!</h4>
+      )}
     </>
   );
 };

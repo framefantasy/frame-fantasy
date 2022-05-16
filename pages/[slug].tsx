@@ -4,15 +4,29 @@ import type {
   GetStaticPathsResult,
   NextPage,
 } from "next";
+import Head from "next/head";
+import { useRouter } from "next/router";
 
 import { Gallery } from "../components/gallery";
-import { SLUGS } from "../utils/constants/shared";
-import { deslugify } from "../utils/functions";
+import { COPY, SLUGS } from "../utils/constants/shared";
+import { deslugify, toTitleCase } from "../utils/functions";
 import { GalleryProps } from "../utils/interfaces/gallery";
 import { v2 as cloudinary, UploadApiResponse } from "cloudinary";
 
 const WeddingsPage: NextPage<GalleryProps> = (props) => {
-  return <Gallery {...props} />;
+  const {
+    query: { slug },
+  } = useRouter();
+
+  return (
+    <>
+      <Head>
+        <title>{toTitleCase(deslugify(slug as string))} | Frame Fantasy</title>
+      </Head>
+
+      <Gallery {...props} />
+    </>
+  );
 };
 
 export default WeddingsPage;
@@ -41,8 +55,6 @@ export async function getStaticProps(
   const categoryExists: boolean = Object.values(SLUGS).includes(slug as SLUGS);
 
   try {
-    const images: string[] = [];
-
     cloudinary.config({
       cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
       api_key: process.env.CLOUDINARY_API_KEY,
@@ -50,24 +62,35 @@ export async function getStaticProps(
       secure: true,
     });
 
-    const { resources } = await cloudinary.api.resources({
-      type: "upload",
-      prefix: `frame-fantasy/${slug}`,
-    });
+    const images: string[] = [];
+    var nextCursor = null;
+    do {
+      const {
+        resources,
+        next_cursor,
+      }: { resources: UploadApiResponse; next_cursor: string } =
+        await cloudinary.api.resources({
+          type: "upload",
+          prefix: `website/gallery/${slug}`,
+          next_cursor: nextCursor,
+        });
 
-    (resources ?? []).forEach(({ secure_url }: UploadApiResponse) => {
-      images.push(secure_url);
-    });
+      (resources ?? []).forEach(({ secure_url }: UploadApiResponse) => {
+        images.push(secure_url);
+      });
+
+      nextCursor = next_cursor ?? null;
+    } while (nextCursor);
 
     if (categoryExists)
       return {
         props: {
           images,
           name: deslugify(slug as string),
-          tagline: "Anim dolor cupidatat sit quis.",
+          tagline: COPY[slug as SLUGS],
         },
-        // ? INFO: 1 week
-        revalidate: 1 * 60 * 60 * 24 * 7,
+        // ? INFO: 1 day
+        revalidate: 1 * 60 * 60 * 24,
       };
     else
       return {

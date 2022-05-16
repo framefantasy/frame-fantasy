@@ -1,8 +1,7 @@
-import { ROUTES } from "../constants/shared";
+import { ROUTES, SLUGS } from "../constants/shared";
 
 export interface CategoryProps {
-  name: string;
+  slug: SLUGS;
   tagline: string;
   href: ROUTES;
-  images: string[];
 }

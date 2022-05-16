@@ -1,7 +1,15 @@
-import { NavItem } from "../interfaces/shared";
+import { FooterItem, NavItem } from "../interfaces/shared";
+import {
+  Instagram,
+  Facebook,
+  Twitter,
+  Mail,
+  Phone,
+  Whatsapp,
+} from "../../utils/logos";
 
 export enum SLUGS {
-  PORTRAITS = "portraits",
+  PORTFOLIO = "portfolio",
   COMMERCIAL_FASHION = "commercial-fashion",
   PRE_WEDDING = "pre-wedding",
   WEDDINGS = "weddings",
@@ -12,7 +20,7 @@ export enum SLUGS {
 
 export enum ROUTES {
   INDEX = "/",
-  PORTRAITS = "/portraits",
+  PORTFOLIO = "/portfolio",
   COMMERCIAL_FASHION = "/commercial-fashion",
   PRE_WEDDING = "/pre-wedding",
   WEDDINGS = "/weddings",
@@ -23,9 +31,9 @@ export enum ROUTES {
 
 export const NAV_ITEMS: NavItem[] = [
   {
-    slug: SLUGS.PORTRAITS,
+    slug: SLUGS.PORTFOLIO,
     external: false,
-    href: ROUTES.PORTRAITS,
+    href: ROUTES.PORTFOLIO,
   },
   {
     slug: SLUGS.COMMERCIAL_FASHION,
@@ -58,3 +66,40 @@ export const NAV_ITEMS: NavItem[] = [
     href: ROUTES.OTHERS,
   },
 ];
+
+export const FOOTER_ITEMS: FooterItem[] = [
+  {
+    icon: <Facebook className="w-10" />,
+    href: "https://www.facebook.com/framefantasybypurbafalgunipaul",
+  },
+  {
+    icon: <Instagram className="w-10" />,
+    href: "https://www.instagram.com/frame_fantasy/",
+  },
+  {
+    icon: <Twitter className="w-10" />,
+    href: "https://twitter.com/FantasyFrame",
+  },
+  {
+    icon: <Mail className="w-10" />,
+    href: "mailto:info@framefantasy.co.in",
+  },
+  {
+    icon: <Phone className="w-10" />,
+    href: "tel:+918452011968",
+  },
+  {
+    icon: <Whatsapp className="w-10" />,
+    href: "https://wa.me/+918452011968?text=Hi!",
+  },
+];
+
+export const COPY: Record<SLUGS, string> = {
+  [SLUGS.PORTFOLIO]: "Allow us to capture the best of YOU!",
+  [SLUGS.COMMERCIAL_FASHION]: "Sell a lifestyle, not a product.",
+  [SLUGS.PRE_WEDDING]: "The first step before new beginnings...",
+  [SLUGS.WEDDINGS]: " Framing your day in a memorable way!",
+  [SLUGS.CONCEPTUAL]: "Imagination is your only limit.",
+  [SLUGS.MATERNITY]: "'9 Months preparing to fall in love for a lifetime.'",
+  [SLUGS.OTHERS]: "Capture all your glorious events...",
+};
