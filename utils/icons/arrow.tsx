@@ -1,6 +1,6 @@
 import { IconProps } from "../interfaces/shared";
 
-const Arrow = ({ className = "" }: IconProps) => (
+const Arrow: React.FC<IconProps> = ({ className = "" }) => (
   <svg
     className={`w-full h-full ${className}`}
     stroke="currentColor"

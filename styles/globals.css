@@ -107,3 +107,8 @@ h4 {
   left: 1px;
   position: absolute;
 }
+
+input,
+textarea {
+  outline: none;
+}
