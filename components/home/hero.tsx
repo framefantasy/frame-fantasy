@@ -2,7 +2,7 @@ import { Arrow } from "../../utils/icons";
 
 const Hero = () => {
   return (
-    <section className="h-screen overflow-hidden w-full flex select-none bg-no-repeat bg-[url('/hero/preview.gif')] bg-cover bg-center">
+    <section className="h-screen overflow-hidden w-full flex select-none bg-no-repeat bg-[url('/home/preview.gif')] bg-cover bg-center">
       <div className="flex flex-col justify-center items-center text-center w-full pt-16 relative text-white bg-secondary bg-opacity-70">
         <h1 className="w-full">Frame Fantasy</h1>
         <p className="my-2 italic">by</p>
