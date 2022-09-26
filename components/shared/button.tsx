@@ -1,9 +1,14 @@
-import { ButtonProps } from "../../utils/interfaces/shared";
-
-const Button = ({ children, onClick }: ButtonProps) => (
+const Button = ({
+  children,
+  className = "",
+  ...props
+}: React.DetailedHTMLProps<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
+>) => (
   <button
-    className="bg-primary text-secondary py-2 px-8 font-medium"
-    onClick={onClick}
+    {...props}
+    className={`bg-primary text-secondary py-2 px-8 font-medium ${className}`}
   >
     {children}
   </button>

@@ -19,6 +19,9 @@ module.exports = {
         "9xl": "96rem",
         "10xl": "104rem",
       },
+      minHeight: {
+        screen: "100vh",
+      },
     },
   },
   plugins: [],
