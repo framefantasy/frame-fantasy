@@ -88,7 +88,7 @@ const Contact = () => {
           <div className="w-10/12 md:w-6/12 border-b-4 border-primary flex flex-col lg:flex-row lg:items-end text-white pb-4 mt-12 xl:mt-0 mb-12">
             <h2 className="capitalize">Contact</h2>
             <span className="text-sm lg:ml-8 mt-4 lg:mt-0 font-medium">
-              a quote maybe
+              Lets get in touch!
             </span>
           </div>
 
