@@ -1,4 +1,5 @@
 import { CATEGORIES } from "../../utils/constants/home";
+import { Contact } from "../shared";
 import { Hero, Category, About } from "./";
 
 export const Home = () => {
@@ -11,6 +12,8 @@ export const Home = () => {
       {CATEGORIES.map((category) => (
         <Category key={category.slug} {...category} />
       ))}
+
+      <Contact />
     </>
   );
 };
