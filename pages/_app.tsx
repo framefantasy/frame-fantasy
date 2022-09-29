@@ -30,9 +30,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="manifest" href="/site/site.webmanifest" />
       </Head>
 
-      <Navbar />
-      <Component {...pageProps} />
-      <Footer />
+      <div className="flex flex-col min-h-screen justify-between">
+        <Navbar />
+        <Component {...pageProps} />
+        <Footer />
+      </div>
     </>
   );
 }

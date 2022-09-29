@@ -14,11 +14,15 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-secondary z-40">
-      <div className="w-full max-w-10xl px-10 mx-auto hidden lg:flex items-center justify-between py-4">
+      <div className="w-full px-10 mx-auto hidden lg:flex items-center justify-between py-4">
         <Link href={ROUTES.INDEX}>
           <a>
-            <img src="/brand/RTwT.png" alt="Frame Fantasy" />
+            <img src="/brand/RTwT.png" alt="Frame Fantasy" className="w-40" />
           </a>
+        </Link>
+
+        <Link href={ROUTES.ABOUT}>
+          <a className="text-lg font-medium capitalize">About</a>
         </Link>
 
         {NAV_ITEMS.filter((item) => item.slug !== slug).map((nav) => (
@@ -32,6 +36,10 @@ const Navbar = () => {
             </a>
           </Link>
         ))}
+
+        <Link href={ROUTES.CONTACT}>
+          <a className="text-lg font-medium capitalize">Contact</a>
+        </Link>
       </div>
 
       <div className="fixed top-0 left-0 w-full lg:hidden">
@@ -41,6 +49,10 @@ const Navbar = () => {
           } bg-secondary relative z-50 mt-0 shadow-topbar w-full min-w-max transition-all duration-1000 overflow-hidden`}
         >
           <div className="flex flex-col px-6 py-8">
+            <Link href={ROUTES.ABOUT}>
+              <a className="text-lg font-medium capitalize mb-2">About</a>
+            </Link>
+
             {NAV_ITEMS.map((nav) => (
               <Link key={nav.href} href={nav.href}>
                 <a
@@ -53,6 +65,10 @@ const Navbar = () => {
                 </a>
               </Link>
             ))}
+
+            <Link href={ROUTES.CONTACT}>
+              <a className="text-lg font-medium capitalize mb-2">Contact</a>
+            </Link>
           </div>
         </div>
 
