@@ -15,6 +15,7 @@ export const toTitleCase = (text: string) =>
 export function CreateYupSchema(schema: any, config: CustomFieldTypes) {
   if (config) {
     const { name, validationtype: validationType, validations = [] } = config;
+    // @ts-ignore
     if (!Yup[validationType as keyof typeof Yup]) return schema;
     // @ts-ignore
     let validator = Yup[validationType]();
