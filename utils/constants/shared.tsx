@@ -20,6 +20,7 @@ export enum SLUGS {
 
 export enum ROUTES {
   INDEX = "/",
+  ABOUT = "/#about",
   PORTFOLIO = "/portfolio",
   COMMERCIAL_FASHION = "/commercial-fashion",
   PRE_WEDDING = "/pre-wedding",
@@ -27,6 +28,7 @@ export enum ROUTES {
   CONCEPTUAL = "/conceptual",
   MATERNITY = "/maternity",
   OTHERS = "/others",
+  CONTACT = "/contact",
 }
 
 export const NAV_ITEMS: NavItem[] = [
