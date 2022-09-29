@@ -23,7 +23,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       success: true,
       message: "Thank you for your query! We'll get back to you soon!",
     });
-  } catch (err) {
+  } catch (err: any) {
     if (err?.statusCode) {
       res.status(err.statusCode).json({
         success: false,

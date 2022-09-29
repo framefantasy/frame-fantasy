@@ -27,7 +27,7 @@ export const validateRequest = async (
 ) => {
   try {
     await contactRequestSchema.validate(req.body, { abortEarly: false });
-  } catch (err) {
+  } catch (err: any) {
     let message: string = "";
     err.errors.forEach((e: string) => {
       message += `${e}. `;
