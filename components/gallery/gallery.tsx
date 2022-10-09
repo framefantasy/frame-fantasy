@@ -9,7 +9,9 @@ const Gallery = ({ name, tagline, images }: GalleryProps) => {
 
       <Images
         images={images}
-        alt={`Frame Fantasy | ${toTitleCase(deslugify(name))} - ${tagline}`}
+        alt={`Frame Fantasy by Purbafalguni Paul | ${toTitleCase(
+          deslugify(name)
+        )} - ${tagline}`}
       />
     </section>
   );
