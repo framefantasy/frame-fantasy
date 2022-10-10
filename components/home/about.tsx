@@ -33,7 +33,7 @@ const About = () => {
               I have had the privilege to shoot many events and people. I am
               experienced with many locations and photography styles. The
               photograph style may differ from assignment to assignment, but my
-              commitment to quality and craft is unwavering. magna.
+              commitment to quality and craft is unwavering.
             </p>
           </div>
         </div>
