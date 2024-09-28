@@ -31,6 +31,7 @@ const Images = ({ images, alt }: ImagesProps) => {
 
       {images.length ? (
         <>
+          {/* @ts-ignore */}
           <Masonry
             breakpointCols={{
               default: 3,
