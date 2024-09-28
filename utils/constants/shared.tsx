@@ -15,6 +15,7 @@ export enum SLUGS {
   WEDDINGS = "weddings",
   CONCEPTUAL = "conceptual",
   MATERNITY = "maternity",
+  BABY = "baby",
   OTHERS = "others",
 }
 
@@ -27,6 +28,7 @@ export enum ROUTES {
   WEDDINGS = "/weddings",
   CONCEPTUAL = "/conceptual",
   MATERNITY = "/maternity",
+  BABY = "/baby",
   OTHERS = "/others",
   CONTACT = "/contact",
 }
@@ -61,6 +63,11 @@ export const NAV_ITEMS: NavItem[] = [
     slug: SLUGS.MATERNITY,
     external: false,
     href: ROUTES.MATERNITY,
+  },
+  {
+    slug: SLUGS.BABY,
+    external: false,
+    href: ROUTES.BABY,
   },
   {
     slug: SLUGS.OTHERS,
@@ -103,5 +110,6 @@ export const COPY: Record<SLUGS, string> = {
   [SLUGS.WEDDINGS]: " Framing your day in a memorable way!",
   [SLUGS.CONCEPTUAL]: "Imagination is your only limit.",
   [SLUGS.MATERNITY]: "'9 Months preparing to fall in love for a lifetime.'",
+  [SLUGS.BABY]: "A new beginning, a new story...",
   [SLUGS.OTHERS]: "Capture all your glorious events...",
 };

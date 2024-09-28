@@ -22,7 +22,30 @@ module.exports = {
       minHeight: {
         screen: "100vh",
       },
+      backgroundColor: {
+        transparent: "transparent",
+      },
+      textShadow: {
+        "glow-white-sm": "0 0 8px #ffffff",
+        "glow-white-md": "0 0 10px #ffffff",
+        "glow-white-lg": "0 0 12px #ffffff",
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.text-shadow-glow-white-sm': {
+          textShadow: '0 0 8px #ffffff',
+        },
+        '.text-shadow-glow-white-md': {
+          textShadow: '0 0 10px #ffffff',
+        },
+        '.text-shadow-glow-white-lg': {
+          textShadow: '0 0 12px #ffffff',
+        },
+      }
+      addUtilities(newUtilities)
+    }
+  ],
 };
