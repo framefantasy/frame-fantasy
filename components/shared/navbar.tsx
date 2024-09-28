@@ -25,12 +25,14 @@ const Navbar = () => {
           <a className="text-lg font-medium capitalize">About</a>
         </Link>
 
-        {NAV_ITEMS.filter((item) => item.slug !== slug).map((nav) => (
+        {NAV_ITEMS.map((nav) => (
           <Link key={nav.href} href={nav.href}>
             <a
               target={nav.external ? "_blank" : ""}
               rel="noopener noreferrer"
-              className="text-lg font-medium capitalize"
+              className={`text-lg font-medium capitalize ${
+                nav.slug === slug ? "bg-transparent text-primary text-shadow-glow-white-lg" : "text-primary"
+              }`}
             >
               {deslugify(nav.slug)}
             </a>
