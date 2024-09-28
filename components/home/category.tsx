@@ -38,9 +38,7 @@ const Category = ({ href, slug, tagline }: CategoryProps) => {
 
         <div className="flex justify-end border-b-4 border-primary w-10/12 lg:w-7/12 ml-auto py-4">
           <Link href={href}>
-            <a>
-              <Button>Show all</Button>
-            </a>
+            <Button>Show all</Button>
           </Link>
         </div>
       </div>
