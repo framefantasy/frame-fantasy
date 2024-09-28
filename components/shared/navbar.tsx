@@ -16,31 +16,31 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 w-full bg-secondary z-40">
       <div className="w-full px-10 mx-auto hidden lg:flex items-center justify-between py-4">
         <Link href={ROUTES.INDEX}>
-          <a>
-            <img src="/brand/RTwT.png" alt="Frame Fantasy" className="w-40" />
-          </a>
+          <img src="/brand/RTwT.png" alt="Frame Fantasy" className="w-40" />
         </Link>
 
-        <Link href={ROUTES.ABOUT}>
-          <a className="text-lg font-medium capitalize">About</a>
+        <Link href={ROUTES.ABOUT} className="text-lg font-medium capitalize">
+          About
         </Link>
 
         {NAV_ITEMS.map((nav) => (
-          <Link key={nav.href} href={nav.href}>
-            <a
-              target={nav.external ? "_blank" : ""}
-              rel="noopener noreferrer"
-              className={`text-lg font-medium capitalize ${
-                nav.slug === slug ? "bg-transparent text-primary text-shadow-glow-white-lg" : "text-primary"
-              }`}
-            >
-              {deslugify(nav.slug)}
-            </a>
+          <Link
+            key={nav.href}
+            href={nav.href}
+            target={nav.external ? "_blank" : undefined}
+            rel="noopener noreferrer"
+            className={`text-lg font-medium capitalize ${
+              nav.slug === slug
+                ? "bg-transparent text-primary text-shadow-glow-white-lg"
+                : "text-primary"
+            }`}
+          >
+            {deslugify(nav.slug)}
           </Link>
         ))}
 
-        <Link href={ROUTES.CONTACT}>
-          <a className="text-lg font-medium capitalize">Contact</a>
+        <Link href={ROUTES.CONTACT} className="text-lg font-medium capitalize">
+          Contact
         </Link>
       </div>
 
@@ -51,25 +51,28 @@ const Navbar = () => {
           } bg-secondary relative z-50 mt-0 shadow-topbar w-full min-w-max transition-all duration-1000 overflow-hidden`}
         >
           <div className="flex flex-col px-6 py-8">
-            <Link href={ROUTES.ABOUT}>
-              <a className="text-lg font-medium capitalize mb-2">About</a>
+            <Link href={ROUTES.ABOUT} className="text-lg font-medium capitalize mb-2">
+              About
             </Link>
 
             {NAV_ITEMS.map((nav) => (
-              <Link key={nav.href} href={nav.href}>
-                <a
-                  target={nav.external ? "_blank" : ""}
-                  rel="noopener noreferrer"
-                  className="text-lg font-medium capitalize mb-2"
-                  onClick={() => setTopbarOpen(false)}
-                >
-                  {deslugify(nav.slug)}
-                </a>
+              <Link
+                key={nav.href}
+                href={nav.href}
+                className="text-lg font-medium capitalize mb-2"
+                target={nav.external ? "_blank" : ""}
+                rel="noopener noreferrer"
+                onClick={() => setTopbarOpen(false)}
+              >
+                {deslugify(nav.slug)}
               </Link>
             ))}
 
-            <Link href={ROUTES.CONTACT}>
-              <a className="text-lg font-medium capitalize mb-2">Contact</a>
+            <Link
+              href={ROUTES.CONTACT}
+              className="text-lg font-medium capitalize mb-2"
+            >
+              Contact
             </Link>
           </div>
         </div>

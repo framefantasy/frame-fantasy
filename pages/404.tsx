@@ -19,8 +19,8 @@ const NotFound = () => {
           src="/lottie/not-found.json"
         />
 
-        <Link href="/">
-          <a className="hover:underline text-2xl mt-8">Let's take you back</a>
+        <Link href="/" className="hover:underline text-2xl mt-8">
+          Let's take you back
         </Link>
       </section>
     </>

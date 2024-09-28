@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 import { ImagesProps } from "../../utils/interfaces/gallery";
 import Masonry from "react-masonry-css";
-
 const Images = ({ images, alt }: ImagesProps) => {
   const [openImage, setOpenImage] = useState<string | null>(null);
 
@@ -42,13 +41,15 @@ const Images = ({ images, alt }: ImagesProps) => {
             columnClassName="bg-clip-padding"
           >
             {images.map((img) => (
-              <img
-                key={img}
-                src={img}
-                alt={alt}
-                onClick={() => setOpenImage(img)}
-                className="w-full p-2 cursor-pointer"
-              />
+              <>
+                <img
+                  key={img}
+                  src={img}
+                  alt={alt}
+                  onClick={() => setOpenImage(img)}
+                  className="w-full p-2 cursor-pointer"
+                />
+              </>
             ))}
           </Masonry>
           <h5 className="text-center py-8">More images will be added soon!</h5>
